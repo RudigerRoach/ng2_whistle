@@ -116,6 +116,7 @@ export class DashboardComponent implements OnInit {
     }
 
     sortedAlerts():Alert[]{
+        console.log('some change to force a refresh');
         return this.alerts.sort((a:Alert,b:Alert)=>{return a.getPriority() - b.getPriority()});
     }
 
