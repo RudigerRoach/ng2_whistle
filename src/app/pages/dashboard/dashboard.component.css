@@ -1,0 +1,32 @@
+.sebm-google-map-container {
+    height: 300px;
+}
+.DISTRESS {
+    width: 5px;
+    background-color: red;
+}
+.FALSE_ALARM {
+    width: 5px;
+    background-color: green;
+}
+.SUSPICIOUS_ACTIVITY {
+    width: 5px;
+    background-color: yellow;
+}
+.pad-5-px{
+    width: 5px;
+}
+.indicator{
+    width: 5px;
+}
+.alert-name {
+    font-weight: bold;
+    color: white;
+}
+.alert-description {
+    font-size: 0.8em;
+    color: whitesmoke;
+}
+.selectable:active{
+    border: 2px solid black;
+}

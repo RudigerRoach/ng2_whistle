@@ -1,0 +1,10 @@
+<section class="content-header">
+  <h1>
+    {{breadCrumb.header}}
+    <small>{{breadCrumb.subHeader}}</small>
+  </h1>
+  <ol class="breadcrumb">
+    <i class="fa {{breadCrumb.iconName}}"></i>
+    <li *ngFor="let crumb of breadCrumb.trail">{{crumb}}</li>
+  </ol>
+</section>

@@ -6,11 +6,12 @@ import { CanActivateGuard } from './services/guard.service';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNumComponent } from './pages/page-num/page-num.component';
 import { ClientComponent } from './pages/client/client.component';
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 
 const routes: Routes = [
   // Root
   {
-    component: HomeComponent,
+    component: DashboardComponent,
     path: ''
   },
   {

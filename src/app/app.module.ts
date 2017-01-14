@@ -1,7 +1,7 @@
 // external module
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AlertModule, DatepickerModule } from 'ng2-bootstrap/ng2-bootstrap';
@@ -9,6 +9,7 @@ import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { environment } from '../environments/environment';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import {Ng2Bs3ModalModule} from 'ng2-bs3-modal/ng2-bs3-modal';
 
 export function createTranslateLoader( http: Http ) {
     return new TranslateStaticLoader( http, '../public/assets/i18n', '.json' );
@@ -27,7 +28,13 @@ let modules = [
         provide: TranslateLoader,
         useFactory: (createTranslateLoader)
     }),
-    ToasterModule
+    ToasterModule,
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+        apiKey: 'AIzaSyDivAqW0-gaH8aEAt56DPTsv5BJu9rZL60',
+        libraries: ["places"]
+    }),
+    Ng2Bs3ModalModule
 ];
 
 import { AppComponent } from './app.component';
@@ -50,7 +57,8 @@ let widgets = [
     MessagesBoxComponent,
     NotificationBoxComponent,
     TasksBoxComponent,
-    UserBoxComponent
+    UserBoxComponent,
+    DashboardComponent
 ];
 
 import { UserService } from './services/user.service';
@@ -83,14 +91,24 @@ let pages = [
     ClientComponent,
 ];
 
+let pageFragments = [
+    BreacrumbsComponent
+];
+
 // main bootstrap
 import { routing } from './app.routes';
+import {SystemAlertComponent} from "./widgets/system-alert/system-alert.component";
+import {AgmCoreModule} from "angular2-google-maps/core";
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import {BreacrumbsComponent} from "./pages/fragments/breadcrumbs/breadcrumbs.component";
 
 @NgModule( {
     bootstrap: [AppComponent],
     declarations: [
         ...widgets,
-        ...pages
+        ...pages,
+        ...pageFragments,
+        SystemAlertComponent
     ],
     imports: [
         ...modules,

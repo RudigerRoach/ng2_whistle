@@ -1,0 +1,23 @@
+<table class="well" style="width: 100%; margin-bottom: 10px">
+    <tr>
+        <td style="width: 5px" [class]="alert.type"></td>
+        <td class="pad-5-px" class="{{getBackgroundClass(alert.type)}}"></td>
+        <td class="{{getBackgroundClass(alert.type)}}">
+            <span class="alert-name">{{alert.userName}}</span>
+            <span class="alert-description">({{alert.type}})</span>
+            <span class="alert-date pull-right" style="padding-right: 5px; color: grey">{{alert.alertTime | date:'short'}}</span>
+            <br>
+            <span class="pull-right" style="margin: 5px">
+                <span *ngIf="isSuspiciousActivity() || isDistress()">
+                    <button class="btn btn-primary" (click)="notifyNearby(alert.id)">Notify Those Nearby</button>
+                    <button class="btn btn-primary" (click)="viewAlertDetails(alert.id)">View</button>
+                </span>
+                <span>
+                    <button class="btn btn-primary" (click)="dispatchVehicle(alert.id)">Dispatch Vehicle</button>
+                    <button class="btn btn-primary" (click)="dismiss(alert.id)">Dismiss</button>
+                </span>
+
+            </span>
+        </td>
+    </tr>
+</table>
