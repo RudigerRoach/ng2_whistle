@@ -1,6 +1,6 @@
 <breadcrumbs [breadCrumb]="breadcrumbs"></breadcrumbs>
 
-<section class="content">
+<section class="content" *ngIf="authService.isAuthenticated()">
     <div class="row">
         <div class="col-md-6">
             <section id="map-container" class="box box-solid box-primary">

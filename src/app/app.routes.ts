@@ -1,12 +1,9 @@
-import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CanActivateGuard } from './services/guard.service';
-
+import {ModuleWithProviders} from "@angular/core";
+import {Routes, RouterModule} from "@angular/router";
+import {CanActivateGuard} from "./services/guard.service";
 // Components
-import { HomeComponent } from './pages/home/home.component';
-import { PageNumComponent } from './pages/page-num/page-num.component';
-import { ClientComponent } from './pages/client/client.component';
 import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import {CalendarComponent} from "./pages/calendar/calendar.component";
 
 const routes: Routes = [
   // Root
@@ -16,13 +13,8 @@ const routes: Routes = [
   },
   {
     canActivate: [CanActivateGuard],
-    component: PageNumComponent,
-    path: 'page/:id'
-  },
-  {
-    canActivate: [CanActivateGuard],
-    component: ClientComponent,
-    path: 'client'
+    component: CalendarComponent,
+    path: 'calendar'
   }
 ];
 
