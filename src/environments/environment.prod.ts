@@ -4,18 +4,18 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-  // THIS ARE TESTING CONFIG! DONT USE THAT IN PROD! CHANGE THAT!
+
   auth0: {
-    clientID: 'HEkxSwd54g8LXfr3P8g72tvmckSIF0KC',
-    domain: 'ng2-admin-lte.eu.auth0.com'
+    clientID: 'XRlRAFXhN3vmuXe2t4fdGDGpZd7zuD5I',
+    domain: 'rudiger.auth0.com'
   },
   firebase: {
-    apiKey: 'AIzaSyC4mOkOIiMfgzrKE5oIMvI51FJaMZ7DwKA',
-    authDomain: 'ng2-admin-lte-a3958.firebaseapp.com',
-    databaseURL: 'https://ng2-admin-lte-a3958.firebaseio.com',
-    messagingSenderId: '201342590340',
-    storageBucket: 'ng2-admin-lte-a3958.appspot.com'
+    apiKey: "AIzaSyC6ddc4ZrABax1cUHirLWJ1gLVdJttrWzI",
+    authDomain: "whistle-1478878853329.firebaseapp.com",
+    databaseURL: "https://whistle-1478878853329.firebaseio.com",
+    storageBucket: "whistle-1478878853329.appspot.com",
+    messagingSenderId: "940933254762"
   },
-  production: false,
+  production: true,
   silent: false
 };
