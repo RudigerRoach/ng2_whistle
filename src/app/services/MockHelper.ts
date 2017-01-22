@@ -84,7 +84,7 @@ export class MockHelper {
         mock.userName = MockHelper.names[nextNameIndex];
         mock.type = AlertType.DISTRESS;
         mock.id = ++this.nextId;
-        mock.iconUrl = 'http://localhost:4200/public/assets/img/Distress.png';
+        mock.iconUrl = 'public/assets/img/Distress.png';
         return mock;
     }
 
@@ -99,7 +99,7 @@ export class MockHelper {
         mock.userName = MockHelper.names[nextNameIndex];
         mock.type = AlertType.FALSE_ALARM;
         mock.id = ++this.nextId;
-        mock.iconUrl = 'http://localhost:4200/public/assets/img/False_Alarm.png';
+        mock.iconUrl = 'public/assets/img/False_Alarm.png';
         return mock;
     }
 
@@ -114,7 +114,7 @@ export class MockHelper {
         mock.userName = MockHelper.names[nextNameIndex];
         mock.type = AlertType.SUSPICIOUS_ACTIVITY;
         mock.id = ++this.nextId;
-        mock.iconUrl = 'http://localhost:4200/public/assets/img/Suspicious_Activity.png';
+        mock.iconUrl = 'public/assets/img/Suspicious_Activity.png';
         return mock;
     }
 
@@ -123,7 +123,7 @@ export class MockHelper {
         for (let i: number = 0; i < alerts.length; i++) {
             if (alerts[i].type === AlertType.DISTRESS) {
                 alerts[i].type = AlertType.FALSE_ALARM;
-                alerts[i].iconUrl = 'http://localhost:4200/public/assets/img/False_Alarm.png';
+                alerts[i].iconUrl = 'public/assets/img/False_Alarm.png';
                 return alerts[i];
             }
         }
@@ -134,17 +134,17 @@ export class MockHelper {
         let ptaCar: DispatchVehicle = <DispatchVehicle>{};
         ptaCar.latitude = -25.733113;
         ptaCar.longitude = 28.298407999999995;
-        ptaCar.iconUrl = 'http://localhost:4200/public/assets/img/Patrol_Car.png';
+        ptaCar.iconUrl = 'public/assets/img/Patrol_Car.png';
 
         let clnCar: DispatchVehicle = <DispatchVehicle>{};
         clnCar.latitude = -25.6749203;
         clnCar.longitude = 28.4658821;
-        clnCar.iconUrl = 'http://localhost:4200/public/assets/img/Patrol_Car.png';
+        clnCar.iconUrl = 'public/assets/img/Patrol_Car.png';
 
         let rtnCar: DispatchVehicle = <DispatchVehicle>{};
         rtnCar.latitude = -25.7027853;
         rtnCar.longitude = 28.2117256;
-        rtnCar.iconUrl = 'http://localhost:4200/public/assets/img/Patrol_Car.png';
+        rtnCar.iconUrl = 'public/assets/img/Patrol_Car.png';
 
         return [ptaCar, clnCar, rtnCar];
     }
