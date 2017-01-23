@@ -29,14 +29,14 @@ export class AuthService {
           this.auth.getDelegationToken(this.generateAuthOption(authResult.idToken)
             , (err: Auth0Error, token: Auth0DelegationToken): void => {
               if (err) {
-                this.notif.error(err.message);
+                //this.notif.error(err.message);
               } else {
                 this.af.auth.login(token.id_token, {
                   method: AuthMethods.CustomToken, provider: AuthProviders.Custom
                 }).then((resp: any): void => {
                   // this.notif.Success('You successfully loged in');
                 }, (err: Error): void => {
-                  this.notif.error(err.message);
+                  //this.notif.error(err.message);
                 });
               }
             });
